@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Clear down
+        run: |
+          rm -r .
       - name: Download files
         run: |
           wget -r -E --no-parent https://hep1xmllink.ucasenvironments.com/xml-link/XmlLinkWS
