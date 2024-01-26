@@ -16,7 +16,7 @@ jobs:
         run: |
           mv hep1xmllink.ucasenvironments.com/xml-link/* hep1xmllink
           mv hep2xmllink.ucasenvironments.com/xml-link/* hep2xmllink
-          cp hep2xmllink xmllink
+          cp -r hep2xmllink xmllink
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
