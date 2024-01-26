@@ -8,12 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Create file
-        run: echo Hello, world! > file.txt
+      - name: Download files
+        run: |
+          wget -r -E --no-parent https://hep1xmllink.ucasenvironments.com/xml-link/XmlLinkWS
+          wget -r -E --no-parent https://hep2xmllink.ucasenvironments.com/xml-link/XmlLinkWS
+          wget -r -E --no-parent https://xmllink.ucas.com/xml-link/XmlLinkWS
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
           git config --global user.name "ucasenvironments"
           git add .
-          git commit -m "Latest file"
+          git commit -m "Latest files"
           git push
