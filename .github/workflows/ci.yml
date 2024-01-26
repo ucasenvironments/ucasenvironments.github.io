@@ -12,6 +12,8 @@ jobs:
         run: echo Hello, world! > file.txt
       - name: Git
         run: |
+          git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
+          git config --global user.name "ucasenvironments"
           git add .
           git commit -m "Latest file"
           git push
