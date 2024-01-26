@@ -10,7 +10,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Clear down
         run: |
-          rm -r .
+          rm -r hep1xmllink/
+          rm -r hep2xmllink/
+          rm -r xmllink/
       - name: Download files
         run: |
           wget -r -E --no-parent https://hep1xmllink.ucasenvironments.com/xml-link/XmlLinkWS
