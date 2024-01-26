@@ -14,8 +14,8 @@ jobs:
           wget -r -E --no-parent https://hep2xmllink.ucasenvironments.com/xml-link/XmlLinkWS
       - name: Update directory names
         run: |
-          mv hep1xmllink.ucasenvironments.com/xml-link/* hep1xmllink
-          mv hep2xmllink.ucasenvironments.com/xml-link/* hep2xmllink
+          mv hep1xmllink.ucasenvironments.com/* hep1xmllink
+          mv hep2xmllink.ucasenvironments.com/* hep2xmllink
           cp -r hep2xmllink xmllink
       - name: Git
         run: |
