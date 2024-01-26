@@ -24,9 +24,7 @@ jobs:
           cp -r hep2xmllink xmllink
       - name: Update file names
         run: |
-          for file in hep1xmllink/*.html; do mv "$file" "${file/?/}"; done
-          for file in hep2xmllink/*.html; do mv "$file" "${file/?/}"; done
-          for file in xmllink/*.html; do mv "$file" "${file/?/}"; done
+          find . -iname "*?*" -exec rename ?  '{}' \;
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
