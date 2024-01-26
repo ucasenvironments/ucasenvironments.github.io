@@ -12,7 +12,6 @@ jobs:
         run: |
           wget -r -E --no-parent https://hep1xmllink.ucasenvironments.com/xml-link/XmlLinkWS
           wget -r -E --no-parent https://hep2xmllink.ucasenvironments.com/xml-link/XmlLinkWS
-          wget -r -E --no-parent https://xmllink.ucas.com/xml-link/XmlLinkWS
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
