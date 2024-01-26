@@ -16,6 +16,10 @@ jobs:
         run: |
           mv hep1xmllink.ucasenvironments.com/* hep1xmllink
           mv hep2xmllink.ucasenvironments.com/* hep2xmllink
+          cp -r hep1xmllink.ucasenvironments.com/* hep1xmllink
+          rm -r hep1xmllink.ucasenvironments.com/
+          cp -r hep2xmllink.ucasenvironments.com/* hep2xmllink
+          rm -r hep2xmllink.ucasenvironments.com/
           cp -r hep2xmllink xmllink
       - name: Git
         run: |
