@@ -1,0 +1,124 @@
+<html><head><title>XMLLinkWS Web Service</title>
+<style type="text/css">A:link { font-family: Arial, Helvetica, sans-serif; color:#663300; background-color : #FFFFFF;}A:active { font-family: Arial, Helvetica, sans-serif; color:#ff6600; background-color : #FFFFFF;}A:visited { font-family: Arial, Helvetica, sans-serif; color:#996633; background-color : #FFFFFF;}A.navigation:link{font-family: Arial, Helvetica, sans-serif;font-size:65%;color:#996633;background-color : #FFFFFF;}A.navigation:active{ font-family: Arial, Helvetica, sans-serif; font-size:65%; color:#996633; background-color : #FFFFFF;}A.navigation:visited{ font-family: Arial, Helvetica, sans-serif; font-size:65%; color:#996633; background-color : #FFFFFF;}BODY, P, LI, UL, OL { font-family: Arial, Helvetica, sans-serif; font-size:11pt; color:#000000; background-color : #FFFFFF;}H1 { font-family: Arial, Helvetica, sans-serif; font-size:170%; color:#336699; background-color : #FFFFFF; border : solid #CCCC99; border-width : 0px 0px 2px 0px; width : 100%;}H2 {font-family: Arial, Helvetica, sans-serif; font-size:130%; color:#336699; background-color : #FFFFFF; border : solid #cccc99; border-width : 0px 0px 2px 0px; width : 100%;}H3 {font-family: Arial, Helvetica, sans-serif;font-size:110%;color:#336699;background-color : #FFFFFF;width : 100%;}H4 {font-family: Arial, Helvetica, sans-serif;font-size:11pt;color:#000000;background-color : #FFFFFF;font-weight: bold;width : 100%;}P.indent {text-indent: 9%;}table.borders {border : 1% solid #BDB76B;}TR {text-align : left;vertical-align : top;}TH {font-family: Arial, Helvetica, sans-serif;font-size: 11pt;color:#000000;font-weight: bold;}TD {font-family: Arial, Helvetica, sans-serif;font-size: 11pt%;color:#000000;}.mediumtext {font-size:80%;}.smalltext {font-size:75%;}.tinytext {font-size:70%;}p.warning {color:#ff0000;display: block;font-family: Arial, Helvetica, Geneva, sans-serif;font-size: 95%;}p.doc {font-size: 95%;}pre {font-family: "Courier New", Courier, mono;font-size: 95%;}ul {list-style: outside;}ol {list-style: outside;}.GUITag {font-family: Arial, Helvetica, Geneva, sans-serif;font-size: 95%;font-weight: bold;font-style: normal;}</style>
+</head><body>
+<p>Click <a href="/xml-link/XmlLinkWS">here</a> for a complete list of operations.</p>
+<h2>getReferenceTariffs</h2>
+<h2>Test</h2>
+To test the operation using the HTTP GET protocol, click the 'Invoke' button.
+<form name="testpagefrm" target="_blank" action='/xml-link/XmlLinkWS' method="GET">
+<input type="hidden" name="invoke" value="getReferenceTariffs">
+<table cellspacing="0" cellpadding="4" frame="box" bordercolor="#dcdcdc" rules="none" style="border-collapse: collapse;">
+<tr>
+<th class="frmHeader" BGCOLOR="#dcdcdc" style="border-right: 2px solid white;">Parameter</th>
+<th class="frmHeader" BGCOLOR="#dcdcdc" style="border-right: 2px solid white;">Type</th>
+<th class="frmHeader" BGCOLOR="#dcdcdc" >Value</th>
+</tr>
+<tr>
+<td class="frmText" style="color: #000000; font-weight:normal;">institutionCode</td>
+<td class="frmText" style="color: #000000; font-weight:normal;">string</td>
+<td><input class="frmInput" type="text" size="50" name="institutionCode"></td>
+</tr>
+<tr>
+<td class="frmText" style="color: #000000; font-weight:normal;">userId</td>
+<td class="frmText" style="color: #000000; font-weight:normal;">string</td>
+<td><input class="frmInput" type="text" size="50" name="userId"></td>
+</tr>
+<tr>
+<td class="frmText" style="color: #000000; font-weight:normal;">password</td>
+<td class="frmText" style="color: #000000; font-weight:normal;">string</td>
+<td><input class="frmInput" type="text" size="50" name="password"></td>
+</tr>
+<tr>
+<td class="frmText" style="color: #000000; font-weight:normal;">lastUpdated</td>
+<td class="frmText" style="color: #000000; font-weight:normal;">string</td>
+<td><input class="frmInput" type="text" size="50" name="lastUpdated"></td>
+</tr>
+<tr>
+<td class="frmText" style="color: #000000; font-weight:normal;">rowStartPosition</td>
+<td class="frmText" style="color: #000000; font-weight:normal;">int</td>
+<td><input class="frmInput" type="text" size="50" name="rowStartPosition"></td>
+</tr>
+<tr><td></td>
+<td>
+<script type="text/javascript">
+function confirmSubmit()
+{
+   var maxLength = 1975;
+   var concatString ;
+var listspchars = new Array();
+listspchars[0] = '  ';
+listspchars[1] = '!';
+listspchars[2] = '"';
+listspchars[3] = '#';
+listspchars[4] = '$';
+listspchars[5] = '%';
+listspchars[6] = '&';
+listspchars[7] = '\'';
+listspchars[8] = '(';
+listspchars[9] = ')';
+listspchars[10] = '*';
+listspchars[11] = '+';
+listspchars[12] = ';';
+listspchars[13] = '-';
+listspchars[14] = '.';
+listspchars[15] = '/';
+listspchars[16] = ':';
+listspchars[17] = ';';
+listspchars[18] = '<';
+listspchars[19] = '=';
+listspchars[20] = '>';
+listspchars[21] = '?';
+listspchars[22] = '@';
+listspchars[23] = '^';
+listspchars[24] = '_';
+listspchars[25] = '`';
+listspchars[26] = '{';
+listspchars[27] = '|';
+listspchars[28] = '}';
+concatString = testpagefrm.rowStartPosition.value+testpagefrm.lastUpdated.value+testpagefrm.password.value+testpagefrm.userId.value+testpagefrm.institutionCode.value+''
+ var i = 0;
+ var cnt = 0;
+
+ while (i<=28)
+ {
+   cnt = countSpecialChars(concatString, listspchars[i]) + cnt;
+   i++;
+ }
+cnt = cnt * 2;
+   var totallength=testpagefrm.rowStartPosition.value.length+testpagefrm.lastUpdated.value.length+testpagefrm.password.value.length+testpagefrm.userId.value.length+testpagefrm.institutionCode.value.length+cnt;
+   if ( totallength < maxLength ) 
+   return true; 
+   else
+   {
+    var agree=confirm("Total length of input to be transmitted is "+totallength +" characters. GET method input will be truncated after "+maxLength+" characters. Reduce message size to avoid incorrect processing and errors. Do you want to continue anyway?");
+   if (agree)
+   	return true ;
+   else
+   return false ;
+   }
+   }
+function countSpecialChars(inString, sp_char)
+{
+
+  var count = 0;
+  var ind = 0;
+  while (ind != -1)
+  {
+     ind = inString.indexOf(sp_char,ind);
+     if (ind > -1)
+     {
+       count++;
+       ind++;
+     }
+     
+  }
+  return count;
+
+}
+   </script> 
+</td>
+<td align="right"><input type="submit" value="Invoke" class="button" onClick="return confirmSubmit()" ></td>
+</tr></table></form>
+<h2>&nbsp;</h2>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"84b9bc47b9816aa8","b":1,"version":"2024.1.0","token":"029495c67f1f4c6e977ecdbde5abeb29"}' crossorigin="anonymous"></script>
+</body></html>
