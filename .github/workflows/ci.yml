@@ -8,10 +8,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Create file
-        run: echo Hello, world! > file.txt
+      - name: Clear down
+        run: |
+          rm -r hep1xmllink/
+          rm -r hep2xmllink/
+          rm -r xmllink/
+      - name: Download files
+        run: |
+          wget -r -E --no-parent https://hep1xmllink.ucasenvironments.com/xml-link/XmlLinkWS
+          wget -r -E --no-parent https://hep2xmllink.ucasenvironments.com/xml-link/XmlLinkWS
+      - name: Update directory names
+        run: |
+          mv hep1xmllink.ucasenvironments.com hep1xmllink
+          mv hep2xmllink.ucasenvironments.com hep2xmllink
+          cp -r hep2xmllink xmllink
+      - name: Update file names
+        run: |
+          for file in $(find hep1xmllink -name '*\?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
+          for file in $(find hep2xmllink -name '*\?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
+          for file in $(find xmllink -name '*\?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
+      - name: Change links
+        run: |
+          cd hep1xmllink/xml-link
+          sed -i 's/"\/xml-link\/XmlLinkWS?/"\/hep1xmllink\/xml-link\/XmlLinkWS_/g' *
+          sed -i 's/"\/xml-link\/XmlLinkWS/"\/hep1xmllink\/xml-link\/XmlLinkWS/g' *
+          sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/hep1xmllink\.ucasenvironments\.com\/xml-link\/XmlLinkWS\x27/g' *
       - name: Git
         run: |
+          git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
+          git config --global user.name "ucasenvironments"
           git add .
-          git commit -m "Latest file"
+          git commit -m "Latest files"
           git push
