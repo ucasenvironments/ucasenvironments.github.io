@@ -26,7 +26,7 @@ jobs:
         run: |
           for file in $(find hep1xmllink -name '*?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
           for file in $(find hep2xmllink -name '*?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
-          for file in $(find xmllink -name '*?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
+          for file in $(find xmllink -name '*\?*.html'); do mv -v "$file" $(echo "$file" | tr ? _); done
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
