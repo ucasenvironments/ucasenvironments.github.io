@@ -30,20 +30,21 @@ jobs:
       - name: Change links
         run: |
           cd hep1xmllink/xml-link
-          sed -i 's/"\/xml-link\/XmlLinkWS?/"\/hep1xmllink\/xml-link\/XmlLinkWS_/g' *
           sed -i 's/"\/xml-link\/XmlLinkWS/"\/hep1xmllink\/xml-link\/XmlLinkWS/g' *
           sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/hep1xmllink\.ucasenvironments\.com\/xml-link\/XmlLinkWS\x27/g' *
           cd ../../hep2xmllink/xml-link
-          sed -i 's/"\/xml-link\/XmlLinkWS?/"\/hep2xmllink\/xml-link\/XmlLinkWS_/g' *
           sed -i 's/"\/xml-link\/XmlLinkWS/"\/hep2xmllink\/xml-link\/XmlLinkWS/g' *
           sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/hep2xmllink\.ucasenvironments\.com\/xml-link\/XmlLinkWS\x27/g' *
           cd ../../xmllink/xml-link
-          sed -i 's/"\/xml-link\/XmlLinkWS?/"\/xmllink\/xml-link\/XmlLinkWS_/g' *
           sed -i 's/"\/xml-link\/XmlLinkWS/"\/xmllink\/xml-link\/XmlLinkWS/g' *
           sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/xmllink\.ucas\.com\/xml-link\/XmlLinkWS\x27/g' *
       - name: Fix redirects
         run: |
           cd hep1xmllink/xml-link
+          sed -i 's/<style/<script src="\/jquery-3\.7\.1\.min\.js"><\/script><script src="\/index\.js"><\/script><style/g' XmlLinkWS.html
+          cd ../../hep2xmllink/xml-link
+          sed -i 's/<style/<script src="\/jquery-3\.7\.1\.min\.js"><\/script><script src="\/index\.js"><\/script><style/g' XmlLinkWS.html
+          cd ../../xmllink/xml-link
           sed -i 's/<style/<script src="\/jquery-3\.7\.1\.min\.js"><\/script><script src="\/index\.js"><\/script><style/g' XmlLinkWS.html
       - name: Git
         run: |
