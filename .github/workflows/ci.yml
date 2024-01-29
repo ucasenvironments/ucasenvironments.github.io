@@ -30,7 +30,7 @@ jobs:
       - name: Change links
         run: |
           cd hep1xmllink
-          sed -i 's/"\/xml-link\/XmlLinkWS"\/"\/hep1xmllink\/xml-link\/XmlLinkWS"/g' *
+          sed -i 's/"\/xml-link\/XmlLinkWS"/"\/hep1xmllink\/xml-link\/XmlLinkWS"/g' *
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
