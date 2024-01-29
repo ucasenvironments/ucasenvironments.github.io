@@ -44,7 +44,7 @@ jobs:
       - name: Fix redirects
         run: |
           cd hep1xmllink/xml-link
-          sed -i 's/<style/<script src="/jquery-3\.7\.1\.min\.js"><\/script><script src="/index\.js"><\/script><style/g' XmlLinkWS.html
+          sed -i 's/<style/<script src="\/jquery-3\.7\.1\.min\.js"><\/script><script src="\/index\.js"><\/script><style/g' XmlLinkWS.html
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
