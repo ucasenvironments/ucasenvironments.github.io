@@ -41,6 +41,10 @@ jobs:
           sed -i 's/"\/xml-link\/XmlLinkWS?/"\/xmllink\/xml-link\/XmlLinkWS_/g' *
           sed -i 's/"\/xml-link\/XmlLinkWS/"\/xmllink\/xml-link\/XmlLinkWS/g' *
           sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/xmllink\.ucas\.com\/xml-link\/XmlLinkWS\x27/g' *
+      - name: Fix redirects
+        run: |
+          cd hep1xmllink/xml-link
+          sed -i 's/<style/<script src="jquery-3\.7\.1\.min\.js"><\/script><script src="index\.js"><\/script><style/g' XmlLinkWS.html
       - name: Git
         run: |
           git config --global user.email "157817631+ucasenvironments@users.noreply.github.com"
