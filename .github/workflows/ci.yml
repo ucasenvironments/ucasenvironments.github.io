@@ -30,7 +30,7 @@ jobs:
       - name: Change links
         run: |
           cd hep1xmllink/xml-link
-          sed -i 's/"\/xml-link\/XmlLinkWS"/"\/hep1xmllink\/xml-link\/XmlLinkWS"/g' *
+          sed -i 's/"\/xml-link\/XmlLinkWS/"\/hep1xmllink\/xml-link\/XmlLinkWS/g' *
           sed -i 's/\x27\/xml-link\/XmlLinkWS\x27/\x27https:\/\/hep1xmllink\.ucasenvironments\.com\/xml-link\/XmlLinkWS\x27/g' *
       - name: Git
         run: |
