@@ -1,12 +1,11 @@
 <html><head><title>XMLLinkWS Web Service</title>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style type="text/css">A:link { font-family: Arial, Helvetica, sans-serif; color:#663300; background-color : #FFFFFF;}A:active { font-family: Arial, Helvetica, sans-serif; color:#ff6600; background-color : #FFFFFF;}A:visited { font-family: Arial, Helvetica, sans-serif; color:#996633; background-color : #FFFFFF;}A.navigation:link{font-family: Arial, Helvetica, sans-serif;font-size:65%;color:#996633;background-color : #FFFFFF;}A.navigation:active{ font-family: Arial, Helvetica, sans-serif; font-size:65%; color:#996633; background-color : #FFFFFF;}A.navigation:visited{ font-family: Arial, Helvetica, sans-serif; font-size:65%; color:#996633; background-color : #FFFFFF;}BODY, P, LI, UL, OL { font-family: Arial, Helvetica, sans-serif; font-size:11pt; color:#000000; background-color : #FFFFFF;}H1 { font-family: Arial, Helvetica, sans-serif; font-size:170%; color:#336699; background-color : #FFFFFF; border : solid #CCCC99; border-width : 0px 0px 2px 0px; width : 100%;}H2 {font-family: Arial, Helvetica, sans-serif; font-size:130%; color:#336699; background-color : #FFFFFF; border : solid #cccc99; border-width : 0px 0px 2px 0px; width : 100%;}H3 {font-family: Arial, Helvetica, sans-serif;font-size:110%;color:#336699;background-color : #FFFFFF;width : 100%;}H4 {font-family: Arial, Helvetica, sans-serif;font-size:11pt;color:#000000;background-color : #FFFFFF;font-weight: bold;width : 100%;}P.indent {text-indent: 9%;}table.borders {border : 1% solid #BDB76B;}TR {text-align : left;vertical-align : top;}TH {font-family: Arial, Helvetica, sans-serif;font-size: 11pt;color:#000000;font-weight: bold;}TD {font-family: Arial, Helvetica, sans-serif;font-size: 11pt%;color:#000000;}.mediumtext {font-size:80%;}.smalltext {font-size:75%;}.tinytext {font-size:70%;}p.warning {color:#ff0000;display: block;font-family: Arial, Helvetica, Geneva, sans-serif;font-size: 95%;}p.doc {font-size: 95%;}pre {font-family: "Courier New", Courier, mono;font-size: 95%;}ul {list-style: outside;}ol {list-style: outside;}.GUITag {font-family: Arial, Helvetica, Geneva, sans-serif;font-size: 95%;font-weight: bold;font-style: normal;}</style>
 </head><body>
 <p>Click <a href="/hep1xmllinkdoc/xml-link/XmlLinkWS">here</a> for a complete list of operations.</p>
 <h2>getCUKASApplicantsDetails</h2>
 <h2>Test</h2>
 To test the operation using the HTTP GET protocol, click the 'Invoke' button.
-<form name="testpagefrm" action='http://localhost:8888/.netlify/functions/ucas_xml' method="POST">
+<form name="testpagefrm" target="_blank" action='/hep1xmllinkdoc/xml-link/invoke' method="GET">
 <input type="hidden" name="invoke" value="getCUKASApplicantsDetails">
 <table cellspacing="0" cellpadding="4" frame="box" bordercolor="#dcdcdc" rules="none" style="border-collapse: collapse;">
 <tr>
@@ -131,59 +130,9 @@ function countSpecialChars(inString, sp_char)
   return count;
 
 }
-
-function getFormData($form){
-    var unindexed_array = $form.serializeArray();
-    var indexed_array = {};
-
-    $.map(unindexed_array, function(n, i){
-        indexed_array[n['name']] = n['value'];
-    });
-
-    return indexed_array;
-}
-
-var formData = getFormData($("form"));
-console.log(formData);
-
-var settings = {
-  "url": "http://localhost:8888/.netlify/functions/ucas_xml",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": JSON.stringify({
-    "invoke": "getUCASApplicantsDetails",
-    "institutionCode": "Z42",
-    "userId": "USER_Z42",
-    "password": "PaswordNewZ42",
-    "personalId": "",
-    "lastUpdated": "",
-    "rowStartPosition": "0"
-  }),
-};
-
-$(".button").on('click', function(){
-	// send ajax
-	$.ajax({
-		url: "http://localhost:8888/.netlify/functions/ucas_xml", // url where to submit the request
-		type : "POST", // type of action POST || GET
-		dataType : 'json', // data type
-		data : getFormData($("form")), // post data || get data
-		success : function(result) {
-			// you can see the result from the console
-			// tab of the developer tools
-			console.log(result);
-		},
-		error: function(xhr, resp, text) {
-			console.log(xhr, resp, text);
-		}
-	})
-});
    </script> 
 </td>
-<td align="right"><input type="submit" value="Invoke" class="button"></td>
+<td align="right"><input type="submit" value="Invoke" class="button" onClick="return confirmSubmit()" ></td>
 </tr></table></form>
 <h2>&nbsp;</h2>
 </body></html>
