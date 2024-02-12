@@ -1,0 +1,37 @@
+<html><head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+var i = 0;
+var interval = setInterval(function() {
+    i = ++i % 4;
+    $("pre").html("Loading"+Array(i+1).join("."));
+}, 500);
+
+var settings = {
+  "url": "http://localhost:8888/.netlify/functions/ucas_xml",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "invoke": "getUCASApplicantsDetails",
+    "institutionCode": "Z42",
+    "userId": "USER_Z42",
+    "password": "PaswordNewZ42",
+    "personalId": "",
+    "lastUpdated": "",
+    "rowStartPosition": "0"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+	clearInterval(interval);
+	var xmlDoc = new XMLSerializer().serializeToString(response);
+    $("pre").text(xmlDoc);
+});
+
+</script>
+</head><body>
+<pre>Loading</pre>
+</body></html>
