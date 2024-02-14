@@ -36,19 +36,18 @@ function formatXml(xml) {
 }
 
 function submitToUCAS() {
+	var body = {};
+
+	$('form').serializeArray().forEach((item) => {
+		body[item.name] = item.value;
+	});
+
 	var i = 0;
 	$("body").html('<pre style="font-family: Consolas;font-size: 13px;">Loading</pre>');
 	var interval = setInterval(function() {
 		i = ++i % 4;
 		$("pre").html("Loading"+Array(i+1).join("."));
 	}, 500);
-
-	var params = new URLSearchParams(window.location.search);
-	var body = {};
-
-	params.forEach((value, key) => {
-	  body[key] = value;
-	});
 
 	var settings = {
 	  "url": "https://adat01abcps01.azurewebsites.net/" + window.location.toString().split("/")[3],
