@@ -5,7 +5,7 @@
 <h2>getReferenceSchoolContacts</h2>
 <h2>Test</h2>
 To test the operation using the HTTP GET protocol, click the 'Invoke' button.
-<form name="testpagefrm" target="_blank" action='/hep2xmllinkdoc/xml-link/invoke' method="GET">
+<form name="testpagefrm">
 <input type="hidden" name="invoke" value="getReferenceSchoolContacts">
 <table cellspacing="0" cellpadding="4" frame="box" bordercolor="#dcdcdc" rules="none" style="border-collapse: collapse;">
 <tr>
@@ -92,7 +92,7 @@ concatString = testpagefrm.rowStartPosition.value+testpagefrm.lastUpdated.value+
 cnt = cnt * 2;
    var totallength=testpagefrm.rowStartPosition.value.length+testpagefrm.lastUpdated.value.length+testpagefrm.schoolCode.value.length+testpagefrm.password.value.length+testpagefrm.userId.value.length+testpagefrm.institutionCode.value.length+cnt;
    if ( totallength < maxLength ) 
-   return true; 
+   return submitToUCAS();
    else
    {
     var agree=confirm("Total length of input to be transmitted is "+totallength +" characters. GET method input will be truncated after "+maxLength+" characters. Reduce message size to avoid incorrect processing and errors. Do you want to continue anyway?");

@@ -5,7 +5,7 @@
 <h2>setAmendedDecisionTransCukas</h2>
 <h2>Test</h2>
 To test the operation using the HTTP GET protocol, click the 'Invoke' button.
-<form name="testpagefrm" target="_blank" action='/hep1xmllinkdoc/xml-link/invoke' method="GET">
+<form name="testpagefrm">
 <input type="hidden" name="invoke" value="setAmendedDecisionTransCukas">
 <table cellspacing="0" cellpadding="4" frame="box" bordercolor="#dcdcdc" rules="none" style="border-collapse: collapse;">
 <tr>
@@ -142,7 +142,7 @@ concatString = testpagefrm.instrumentCode2.value+testpagefrm.instrumentCode1.val
 cnt = cnt * 2;
    var totallength=testpagefrm.instrumentCode2.value.length+testpagefrm.instrumentCode1.value.length+testpagefrm.studyMode.value.length+testpagefrm.offerText.value.length+testpagefrm.decisionCode.value.length+testpagefrm.entryMonth.value.length+testpagefrm.entryYear.value.length+testpagefrm.pointOfEntry.value.length+testpagefrm.courseCode.value.length+testpagefrm.choiceNumber.value.length+testpagefrm.applicationSchemeCode.value.length+testpagefrm.personalId.value.length+testpagefrm.applicationNumber.value.length+testpagefrm.password.value.length+testpagefrm.userId.value.length+testpagefrm.institutionCode.value.length+cnt;
    if ( totallength < maxLength ) 
-   return true; 
+   return submitToUCAS();
    else
    {
     var agree=confirm("Total length of input to be transmitted is "+totallength +" characters. GET method input will be truncated after "+maxLength+" characters. Reduce message size to avoid incorrect processing and errors. Do you want to continue anyway?");
