@@ -49,8 +49,10 @@ function submitToUCAS() {
 		$("pre").html("Loading"+Array(i+1).join("."));
 	}, 500);
 
+	var environment = window.location.toString().split("/")[3];
+
 	var settings = {
-	  "url": "https://adat01abcps01.azurewebsites.net/" + window.location.toString().split("/")[3],
+	  "url": "https://inquisitive-unicorn-88cf28.netlify.app/.netlify/functions/" + environment.substr(0, environment.length - 3) + "/ucas_xml"
 	  "method": "POST",
 	  "timeout": 0,
 	  "headers": {
