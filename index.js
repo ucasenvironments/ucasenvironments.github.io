@@ -52,7 +52,7 @@ function submitToUCAS() {
 	var environment = window.location.toString().split("/")[3];
 
 	var settings = {
-	  "url": "https://inquisitive-unicorn-88cf28.netlify.app/.netlify/functions/" + environment.substr(0, environment.length - 3) + "/ucas_xml"
+	  "url": "https://inquisitive-unicorn-88cf28.netlify.app/.netlify/functions/" + environment.substr(0, environment.length - 3) + "/ucas_xml",
 	  "method": "POST",
 	  "timeout": 0,
 	  "headers": {
