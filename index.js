@@ -41,6 +41,7 @@ function submitToUCAS() {
 	$('form').serializeArray().forEach((item) => {
 		body[item.name] = item.value;
 	});
+	body["environment"] = window.location.toString().split("/")[3];
 
 	var i = 0;
 	$("body").html('<pre style="font-family: Consolas;font-size: 13px;">Loading</pre>');
@@ -50,7 +51,7 @@ function submitToUCAS() {
 	}, 500);
 
 	var settings = {
-	  "url": "https://adat01abcps01.azurewebsites.net/" + window.location.toString().split("/")[3],
+	  "url": "https://ucasenvironments.azurewebsites.net/api/http_trigger",
 	  "method": "POST",
 	  "timeout": 0,
 	  "headers": {
