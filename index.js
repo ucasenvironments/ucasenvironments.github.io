@@ -62,6 +62,6 @@ function submitToUCAS() {
 
 	$.ajax(settings).done(function (response) {
 		clearInterval(interval);
-		$("pre").text(formatXml(response.data));
+		$("pre").text(formatXml(new XMLSerializer().serializeToString(response)));
 	});
 }
